@@ -1,0 +1,39 @@
+DATASETS:
+    NAME: "cub200"
+    CLASS: 200
+
+MODEL:
+    META_ARCHITECTURE: "resnet50_NRS"
+    DH: 3
+    DW: 3
+    N_MUL: 2
+    DD: 2048
+    #DD: 25088
+    N_PER_GROUP: 64
+
+    FC:
+      N_FC: 1024
+      B_FC: False
+    #RESUME: "Results/ResNet-NFL448/model_best.pth.tar"
+    #RESUME: "Results/ResNetModel_best.pth.tar"
+
+INPUT:
+  SIZE: 448
+
+SOLVER:
+    NUM_ROUNDS: 1
+    MAX_EPOCHS: 65
+    TRAIN_PER_BATCH: 30
+    TEST_PER_BATCH: 30
+    LR: 1e-3
+    LR_SCHEDULER_ON: True
+    LR_SCHEDULER_MILESTONE: [20, 40]
+    WEIGHT_DECAY: 1e-4
+
+LOG_EPOCHS: 1
+
+#TRAIN: FALSE
+
+OUTPUT_DIR:
+    "Results/CUB_nPer/ResNet-NFL448/"
+

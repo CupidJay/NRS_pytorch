@@ -1,0 +1,29 @@
+DATASETS:
+    NAME: "mnist"
+    CLASS: 10
+
+MODEL:
+    META_ARCHITECTURE: "UciNRSNet"
+    DH: 3
+    DW: 3
+    N_MUL: 5
+    DD: 780
+    N_PER_GROUP: 1
+
+    FC:
+        N_FC: 512
+        B_FC: True
+
+SOLVER:
+    NUM_ROUNDS: 5
+    MAX_EPOCHS: 20
+    TRAIN_PER_BATCH: 512
+    TEST_PER_BATCH: 512
+    LR: 1e-4
+    LR_SCHEDULER_ON: False
+    WEIGHT_DECAY: 1e-4
+    OPTIMIZER: Adam
+
+OUTPUT_DIR:
+    "Results/uci/mnist"
+

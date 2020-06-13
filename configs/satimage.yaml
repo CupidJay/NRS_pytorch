@@ -1,0 +1,29 @@
+DATASETS:
+    NAME: "satimage"
+    CLASS: 6
+
+MODEL:
+    META_ARCHITECTURE: "UciNRSNet"
+    DH: 3
+    DW: 3
+    N_MUL: 20
+    DD: 36
+    N_PER_GROUP: 1
+
+    FC:
+        N_FC: 256
+        B_FC: True
+
+SOLVER:
+    NUM_ROUNDS: 5
+    MAX_EPOCHS: 50
+    TRAIN_PER_BATCH: 128
+    TEST_PER_BATCH: 128
+    LR: 1e-4
+    LR_SCHEDULER_ON: False
+    WEIGHT_DECAY: 1e-4
+    OPTIMIZER: Adam
+
+OUTPUT_DIR:
+    "Results/uci/satimage"
+
