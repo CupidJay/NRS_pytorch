@@ -1,6 +1,7 @@
 # NRS_pytorch
 official pytorch implementation of Neural Random Subapce (NRS)
-paper is availabel at [[Project]](https://github.com/mnielsen/neural-networks-and-deep-learning)
+
+paper is availabel at [[arxiv]](https://arxiv.org/abs/1911.07845)
 
 ![](https://github.com/CupidJay/hello-world/blob/master/network.pdf)
 
@@ -9,7 +10,9 @@ Random subspace is the pillar of random forests. We propose Neural Random Subspa
 
 Keywords: random subspace, ensemble learning, deep neural networks
 
-## Prerequisites
+## Getting Started
+
+### Prerequisites
 * python 3
 * PyTorch (> 1.0)
 * torchvision (> 0.2)
@@ -20,15 +23,21 @@ Keywords: random subspace, ensemble learning, deep neural networks
 ```
 CUDA_VISIBLE_DEVICES="0" python main.py \
 --config-file configs/letter.yaml \
-MODEL.META_ARCHITECTURE UciFCNet \ #if you want to use MLP, else default
-MODEL.N_MUL 50 \ #if you want to use different values for nMul, the same for other hyper-parameters, e.g., nPer
-SOLVER.NUM_EPOCHS 50 \ # if you want to specify the total epochs, the same for other settings, e.g., batch-size
-OUTPUT_DIR "Results/uci/letter" \ #the output directory for log file and model file
 ```
 - CUB200: We used 4 GPUs to train CUB200. 
 ```
 CUDA_VISIBLE_DEVICES="0,1,2,3" python main.py \
 --config-file configs/cub200resnet.yaml
+```
+
+- More configurations
+```
+CUDA_VISIBLE_DEVICES="0" python main.py \
+--config-file configs/letter.yaml \
+MODEL.META_ARCHITECTURE UciFCNet \ #if you want to use MLP, else default
+MODEL.N_MUL 50 \ #if you want to use different values for nMul, the same for other hyper-parameters, e.g., nPer
+SOLVER.NUM_EPOCHS 50 \ # if you want to specify the total epochs, the same for other settings, e.g., batch-size
+OUTPUT_DIR "Results/uci/letter" \ #the output directory for log file and model file
 ```
 
 ### Test Examples using Pretrained model
