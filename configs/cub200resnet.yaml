@@ -14,8 +14,7 @@ MODEL:
     FC:
       N_FC: 1024
       B_FC: False
-    #RESUME: "Results/ResNet-NFL448/model_best.pth.tar"
-    #RESUME: "Results/ResNetModel_best.pth.tar"
+    #RESUME: "Results/ResNet-NRS448/model_best.pth.tar"
 
 INPUT:
   SIZE: 448
@@ -35,5 +34,5 @@ LOG_EPOCHS: 1
 #TRAIN: FALSE
 
 OUTPUT_DIR:
-    "Results/CUB_nPer/ResNet-NFL448/"
+    "Results/CUB200/ResNet-NRS448/"
 
