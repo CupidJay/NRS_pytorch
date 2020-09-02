@@ -2,7 +2,7 @@
 official pytorch implementation of Neural Random Subapce (NRS)
 
 paper is availabel at [[arxiv]](https://arxiv.org/abs/1911.07845)
-![](https://github.com/CupidJay/hello-world/blob/master/NRS-network-new.jpg)
+![](https://github.com/CupidJay/NRS_pytorch/blob/master/NRS-network-new.jpg)
 
 ## Abstract
 Random subspace is the pillar of random forests. We propose Neural Random Subspace (NRS), a novel deep learning based random subspace method. In contrast to previous forest methods, NRS enjoys the benefits of end-to-end, data-driven representation learning, as well as pervasive support from deep learning software and hardware platforms, hence achieving faster inference speed and higher accuracy. Furthermore, as a non-linear component to be encoded into Convolutional Neural Networks (CNNs), NRS learns non-linear feature representations in CNNs more efficiently than previous higher-order pooling methods, producing good results with negligible increase in parameters, floating point operations (FLOPs) and real running time. We achieve superior performance on 35 machine learning datasets when compared to random subspace, random forests and gradient boosting decision trees (GBDTs). Moreover, on both 2D image and 3D point cloud recognition tasks, integration of NRS with CNN architectures achieves consistent improvements with negligible extra cost. 
