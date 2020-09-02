@@ -61,25 +61,25 @@ def test(model, cfg, logger):
 
         if len(batch_x.size()) > 4:
             bs, crops, ch, h, w = batch_x.size()
-            torch.cuda.synchronize()
-            start = time.time()
+            #torch.cuda.synchronize()
+            #start = time.time()
             out= model(batch_x.view(-1, ch, h, w))
-            torch.cuda.synchronize()
-            end = time.time()
+            #torch.cuda.synchronize()
+            #end = time.time()
             out = out.view(bs, crops, -1).mean(dim=1)
         else:
             #torch.cuda.synchronize()
-            start = time.time()
+            #start = time.time()
             out = model(batch_x)
             #torch.cuda.synchronize()
-            end = time.time()
+            #end = time.time()
         loss = loss_func(out, batch_y)
         eval_loss += loss.item()
         pred = torch.max(out, 1)[1]
         num_correct = (pred == batch_y).sum().item()
         eval_acc += num_correct
         eval_total += batch_y.size(0)
-        time_list.append(end-start)
+        #time_list.append(end-start)
         if (i+1)%100==0:
             print(i)
         if i>1000:
@@ -88,6 +88,6 @@ def test(model, cfg, logger):
     eval_acc = 100 * float(eval_acc) / float(eval_total)
 
     logger.info("Test Loss: {:.6f}, Acc: {:.6f}%".format(eval_loss, eval_acc))
-    print(time_list)
-    logger.info("Time: {}".format(np.sum(time_list)))
-    return np.sum(time_list)
+    #print(time_list)
+    #logger.info("Time: {}".format(np.sum(time_list)))
+    #return np.sum(time_list)
