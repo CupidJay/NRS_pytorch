@@ -204,7 +204,13 @@ class ResNet_NRS(nn.Module):
         x = self.avgpool(x)
         x = x.view(x.size(0), -1)
         #return x
-        x = torch.stack([xi[self.mask] for xi in torch.unbind(x, dim=0)], dim=0)
+        #x = torch.stack([xi[self.mask] for xi in torch.unbind(x, dim=0)], dim=0)
+        
+        #faster version
+        now_ind = self.mask.unsqueeze(0).repeat([x.size(0), 1])
+        x = x.repeat([1, self.nMul])
+        x = torch.gather(x, 1, now_ind)
+
         x = x.view(x.size(0), self.dd*self.nMul, self.dH, self.dW)
 
         #x = x.view(x.size(0), self.dH, self.dW, self.dd*self.nMul)
