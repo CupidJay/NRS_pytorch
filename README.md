@@ -53,13 +53,13 @@ Code for 3D recognition is availabel at [[NRS_3D]](https://github.com/hansen7/NR
 ## Citation
 ```
 @article{NRS,
-  title={Neural random subspace},
-  author={Yun-Hao Cao and Jianxin Wu and Hanchen Wang and Joan Lasenby},
-  journal={Pattern Recognition},
-  volume={112},
-  pages={Article 107801},
-  year={2021},
-  publisher={Elsevier}
+    title={Neural random subspace},
+    author={Yun-Hao Cao and Jianxin Wu and Hanchen Wang and Joan Lasenby},
+    journal={Pattern Recognition},
+    volume={112},
+    pages={Article 107801},
+    year={2021},
+    publisher={Elsevier}
 }
 
 ```
